@@ -1,0 +1,11 @@
+function myFunction() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet()
+var sheet1=ss.getSheetByName('Sheet1');
+var max= sheet1.getRange(2,10).getValue();
+var row= Math.floor(Math.random()*(max-2))+2;
+var emailAddress = sheet1.getRange(row,1).getValue();
+var subject = sheet1.getRange(row,2).getValue();
+var message = sheet1.getRange(row,3).getValue();
+var message_full= sheet1.getRange(row,4).getValue() + "\n" + message + " - " + sheet1.getRange(row,5).getValue();
+MailApp.sendEmail(emailAddress, subject, message_full, {name: 'Your daily Quote'});  
+  }
