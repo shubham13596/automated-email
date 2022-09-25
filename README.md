@@ -1,4 +1,4 @@
-# automated-email
+# Automated email delivery via Google Apps Script
 JS code to automate emails over my gmail at pre-defined times
 
 This was an attempt to use Google Apps Script to automate sending emails. 
