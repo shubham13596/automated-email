@@ -1,0 +1,11 @@
+function myFunction() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet()
+var sheet1=ss.getSheetByName('modernLove_2');
+var max= 1002;
+var row= Math.floor(Math.random()*(max-2))+1;
+var emailAddress = sheet1.getRange(row,1).getValue();
+var subject = "Today's ML newsletter";
+var message = sheet1.getRange(row,4).getValue();
+var message_full= message + "\n" + sheet1.getRange(row,5).getValue();
+MailApp.sendEmail(emailAddress, subject, message_full, {name: 'Your ML newsletter'});
+}
